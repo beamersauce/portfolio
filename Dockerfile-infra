@@ -1,0 +1,8 @@
+FROM ubuntu:latest
+RUN apt update
+RUN apt install curl unzip -y
+#Install Terraform
+RUN curl https://releases.hashicorp.com/terraform/0.13.5/terraform_0.13.5_linux_amd64.zip --output terraform.zip
+RUN unzip terraform.zip -d /usr/local/bin
+#Install Azure CLI
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
